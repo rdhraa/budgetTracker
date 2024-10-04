@@ -37,9 +37,9 @@ expenseForm.addEventListener("submit",(e)=>{
     updateBalance()
 })
 
-// Function to add expense to the table
+// to add expense to the table
 const addExpenseToTable = (expense) => {
-    const row = document.createElement("tr");
+    const row = document.createElement("tr")
     row.innerHTML = `
         <td>${expense.description}</td>
         <td>${expense.amount}</td>
@@ -48,10 +48,10 @@ const addExpenseToTable = (expense) => {
     expenseTableBody.appendChild(row);
 };
 
-// Function to display messages
+// messages
 const showMessage = (message, type) => {
     messageContainer.textContent = message;
-    messageContainer.className = `alert mt-3`; // Reset classes
+    messageContainer.className = `alert mt-3`; 
     switch (type) {
         case 'low':
             messageContainer.classList.add('alert-warning'); // Orange background
@@ -79,13 +79,13 @@ const updateBalance =()=>{
     const balance = income-totalExpenses
     balanceElement.textContent=`Balance is Rs ${balance}`
     if (totalExpenses > income) {
-        showMessage("Warning: Your expenses exceed your income! Time to review your spending.", 'error');
+        showMessage("Warning: Your expenses exceed your income! Time to review your spending.", 'error')
     } else if (balance < (0.2 * income)) {
-        showMessage("Uh-oh! It looks like you're spending a lot. Consider saving for your next big goal!", 'low');
+        showMessage("Uh-oh! It looks like you're spending a lot. Consider saving for your next big goal!", 'low')
     } else if (balance > (0.7 * income)) {
-        showMessage("Great job! You're saving wisely! Keep up the good work!", 'high');
+        showMessage("Great job! You're saving wisely! Keep up the good work!", 'high')
     } else {
-        showMessage("You're managing your budget well. Keep it up!", 'default'); // default can be yellow
+        showMessage("You're managing your budget well. Keep it up!", 'default')
     } 
 } 
 
